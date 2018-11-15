@@ -32,6 +32,16 @@ public class Posicion {
         } else
                 this.columna = columna;
     }
+    
+    /**
+     * Método copia del constructor
+     * @param posicion, posición a realizar la copia
+     */
+    public Posicion (Posicion posicion) {
+       this.fila = posicion.fila;
+       this.columna = posicion.columna;
+    }
+    
     /**
     * Método que devuelve el valor de la propiedad fila.
     * @return el número de fila.
