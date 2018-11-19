@@ -65,7 +65,7 @@ public class Posicion {
     * Método que devuelve la propiedad columna.
     * @return la letra de la columna.
     */
-    public char getcolumna() {
+    public char getColumna() {
         return columna;
     }
 
@@ -73,10 +73,15 @@ public class Posicion {
     * Método que modifica el valor de la propiedad columna.
     * @param columna letra con la columna, si no es correcta lanza la excepción.
     */
-    public void setcolumna(char columna) {
+    public void setColumna(char columna) {
         if (columna < 'a' || columna > 'h') {
                 throw new IllegalArgumentException("Columna no valida");
         } else
                 this.columna = columna;
+    }
+    
+    public boolean equals(Object obj) {
+        Posicion posicion = (Posicion)obj;
+        return this.getFila() == posicion.getColumna();
     }
 }
