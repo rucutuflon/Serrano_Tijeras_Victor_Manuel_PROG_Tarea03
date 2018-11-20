@@ -101,4 +101,12 @@ public class Posicion {
         return true;
     }
     
+    /**
+    * Método que devuelve una cadena de caracteres formateada con los valores de las propiedades.
+    */
+    public String toString() {
+
+        return "("+fila+", "+columna+")";
+
+    }
 }
