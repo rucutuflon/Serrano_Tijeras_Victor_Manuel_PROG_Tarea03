@@ -80,8 +80,25 @@ public class Posicion {
                 this.columna = columna;
     }
     
+    
     public boolean equals(Object obj) {
-        Posicion posicion = (Posicion)obj;
-        return this.getFila() == posicion.getColumna();
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Posicion other = (Posicion) obj;
+        if (this.fila != other.fila) {
+            return false;
+        }
+        if (this.columna != other.columna) {
+            return false;
+        }
+        return true;
     }
+    
 }
