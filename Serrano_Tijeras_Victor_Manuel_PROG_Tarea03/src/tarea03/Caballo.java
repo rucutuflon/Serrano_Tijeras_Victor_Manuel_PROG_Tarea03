@@ -22,6 +22,23 @@ public class Caballo {
         this(Color.NEGRO);
         posicion = new Posicion(8, 'b');
     }
+    
+    /**
+    * Constructor a partir de un color, y según el color, se crea la posición.
+    * @param color que quiero que tenga el caballo.
+    */
+    public Caballo(Color color) {
+
+        this.color = color;
+        switch (color) {
+        case BLANCO:
+            posicion = new Posicion(1, 'b');
+            break;
+        case NEGRO:
+            posicion = new Posicion(8, 'b');
+            break;
+        }
+    }
 
     public Color getColor() {
         return color;
