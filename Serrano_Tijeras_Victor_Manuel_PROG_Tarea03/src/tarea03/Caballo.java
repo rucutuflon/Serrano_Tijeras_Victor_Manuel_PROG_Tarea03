@@ -13,6 +13,15 @@ public class Caballo {
     
     private Color color;
     private Posicion posicion;
+    
+    /**
+    * Constructor por defecto que inicializa el caballo de color Negro en la
+    * posición 8b.
+    */
+    public Caballo() {
+        this(Color.NEGRO);
+        posicion = new Posicion(8, 'b');
+    }
 
     public Color getColor() {
         return color;
@@ -29,6 +38,5 @@ public class Caballo {
     public void setPosicion(Posicion posicion) {
         this.posicion = posicion;
     }
-    
     
 }
