@@ -169,4 +169,8 @@ public class Caballo {
         }
         return true;
     }
+
+    public String toString() {
+        return "Caballo{" + "color=" + color + ", posicion=" + posicion + '}';
+    }
 }
