@@ -5,6 +5,8 @@
  */
 package tarea03;
 
+import javax.naming.OperationNotSupportedException;
+
 /**
  *
  * @author victor
@@ -54,6 +56,82 @@ public class Caballo {
         }
         throw new IllegalArgumentException ("ERROR: Columna inicial no válida.");
     }
+    
+    /**
+    * Método que modifica la propiedad posicion en funcion de la dirección 
+    * hacia la que se va a mover el rey.
+    * @param direccion en la que se va a mover el rey, según la dirección 
+    * en la que se mueva, se modifica la fila o columna o ambas de la posición actual.
+    */
+    public void mover (Direccion direccion) throws OperationNotSupportedException {
+        int filaActual = posicion.getFila();
+        char columnaActual = posicion.getColumna();
+        switch (direccion) {
+            case ARRIBA_IZQUIERDA: 
+                if (filaActual == 8)
+                    throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
+                else 
+                    posicion.setFila(filaActual+2);
+                    posicion.setColumna((char) (columnaActual-1));
+                break;
+            case ARRIBA_DERECHA:
+                if (filaActual == 8 || columnaActual == 'h')
+                    throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
+                else {
+                    posicion.setFila(filaActual+2);
+                    posicion.setColumna((char) (columnaActual+1));
+                }
+                break;
+            case DERECHA_ARRIBA:
+                if (columnaActual == 'h')
+                    throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
+                else {
+                    posicion.setFila(filaActual+1);
+                    posicion.setColumna((char) (columnaActual+2));
+                }
+                break;
+            case DERECHA_ABAJO:
+                if (filaActual == 1 || columnaActual == 'h')
+                    throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
+                else {
+                    posicion.setFila(filaActual-1);
+                    posicion.setColumna((char) (columnaActual+2));
+                }
+                break;
+            case ABAJO_DERECHA:
+                if (filaActual == 1)
+                    throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
+                else {
+                    posicion.setFila((char) (filaActual-2));
+                    posicion.setColumna((char) (columnaActual+1));
+                }
+                break;
+            case ABAJO_IZQUIERDA:
+                if (filaActual == 1 || columnaActual == 'a')
+                    throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
+                else {
+                    posicion.setFila(filaActual-2);
+                    posicion.setColumna((char) (columnaActual-1));
+                }
+                break;
+            case IZQUIERDA_ARRIBA:
+                if (columnaActual == 'a')
+                    throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
+                else {
+                    posicion.setFila(filaActual+1);
+                    posicion.setColumna((char) (columnaActual-2));
+                }
+                break;
+            case IZQUIERDA_ABAJO:
+                if (filaActual == 8 || columnaActual == 'a')
+                    throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
+                else {
+                    posicion.setFila(filaActual-1);
+                    posicion.setColumna((char) (columnaActual-2));
+                }
+            break;
+        }
+   }
 
     public Color getColor() {
         return color;
