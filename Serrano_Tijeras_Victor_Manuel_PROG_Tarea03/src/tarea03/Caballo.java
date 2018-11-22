@@ -60,8 +60,8 @@ public class Caballo {
     
     /**
     * Método que modifica la propiedad posicion en funcion de la dirección 
-    * hacia la que se va a mover el rey.
-    * @param direccion en la que se va a mover el rey, según la dirección 
+    * hacia la que se va a mover el caballo.
+    * @param direccion en la que se va a mover el caballo, según la dirección 
     * en la que se mueva, se modifica la fila o columna o ambas de la posición actual.
     */
     public void mover (Direccion direccion) throws OperationNotSupportedException {
@@ -76,7 +76,7 @@ public class Caballo {
                     posicion.setColumna((char) (columnaActual-1));
                 break;
             case ARRIBA_DERECHA:
-                if (filaActual == 8 || columnaActual == 'h')
+                if (filaActual == 8 || columnaActual == 'b')
                     throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
                 else {
                     posicion.setFila(filaActual+2);
@@ -84,7 +84,7 @@ public class Caballo {
                 }
                 break;
             case DERECHA_ARRIBA:
-                if (columnaActual == 'h')
+                if (columnaActual == 'b')
                     throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
                 else {
                     posicion.setFila(filaActual+1);
@@ -92,7 +92,7 @@ public class Caballo {
                 }
                 break;
             case DERECHA_ABAJO:
-                if (filaActual == 1 || columnaActual == 'h')
+                if (filaActual == 1 || columnaActual == 'b')
                     throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
                 else {
                     posicion.setFila(filaActual-1);
@@ -108,7 +108,7 @@ public class Caballo {
                 }
                 break;
             case ABAJO_IZQUIERDA:
-                if (filaActual == 1 || columnaActual == 'a')
+                if (filaActual == 1 || columnaActual == 'b')
                     throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
                 else {
                     posicion.setFila(filaActual-2);
@@ -116,7 +116,7 @@ public class Caballo {
                 }
                 break;
             case IZQUIERDA_ARRIBA:
-                if (columnaActual == 'a')
+                if (columnaActual == 'b')
                     throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
                 else {
                     posicion.setFila(filaActual+1);
@@ -124,7 +124,7 @@ public class Caballo {
                 }
                 break;
             case IZQUIERDA_ABAJO:
-                if (filaActual == 8 || columnaActual == 'a')
+                if (filaActual == 8 || columnaActual == 'b')
                     throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
                 else {
                     posicion.setFila(filaActual-1);
