@@ -39,6 +39,21 @@ public class Caballo {
             break;
         }
     }
+    
+    public Caballo(Color color, Posicion posicion) {
+        
+        this.color = color;
+        
+        switch (color) {
+        case BLANCO:
+            posicion = new Posicion(1, 'b');
+            break;
+        case NEGRO:
+            posicion = new Posicion(8, 'g');
+            break;
+        }
+        throw new IllegalArgumentException ("ERROR: Columna inicial no válida.");
+    }
 
     public Color getColor() {
         return color;
