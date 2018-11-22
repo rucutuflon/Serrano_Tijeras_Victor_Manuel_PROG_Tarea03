@@ -40,7 +40,7 @@ public class Caballo {
         }
     }
     
-    public Caballo(Color color, Posicion posicion) {
+    public Caballo(Color color, Posicion columna) {
         
         this.color = color;
         
